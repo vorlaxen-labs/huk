@@ -1,21 +1,25 @@
+import { createModule } from '../../core/create-module';
 import { StringTransform } from './parts/transform.part';
 import { StringSecurity } from './parts/security.part';
 import { StringValidation } from './parts/validation.part';
 
-export class StringModule {
-  // Transformation Group
-  public readonly slugify = StringTransform.slugify;
-  public readonly truncate = StringTransform.truncate;
-  public readonly toPascalCase = StringTransform.toPascalCase;
-  public readonly toCamelCase = StringTransform.toCamelCase;
+const Transform  = createModule(StringTransform);
+const Security   = createModule(StringSecurity);
+const Validation = createModule(StringValidation);
 
-  // Security Group
-  public readonly mask = StringSecurity.mask;
-  public readonly secureRandom = StringSecurity.secureRandom;
-  public readonly escapeHtml = StringSecurity.escapeHtml;
+export const string = { ...Transform, ...Security, ...Validation };
 
-  // Validation Group
-  public readonly isEmail = StringValidation.isEmail;
-  public readonly isStrongPassword = StringValidation.isStrongPassword;
-  public readonly isEmpty = StringValidation.isEmpty;
-}
+export type StringModule = typeof string;
+
+export const {
+  slugify,
+  truncate,
+  toPascalCase,
+  toCamelCase,
+  mask,
+  secureRandom,
+  escapeHtml,
+  isEmail,
+  isStrongPassword,
+  isEmpty,
+} = string;

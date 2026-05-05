@@ -1,7 +1,8 @@
-import { StringModule } from './modules/string/string.module';
+import { string } from './modules/string/string.module';
 
-class HuK {
-  public readonly string = new StringModule();
+class HuKs {
+  public readonly string = string;
 }
 
-export const huk = new HuK();
+export const HuK = new HuKs();
+export type { StringModule } from './modules/string/string.module';
