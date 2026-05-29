@@ -2,38 +2,78 @@
   "name": "@vorlaxen-labs/huk-js",
   "version": "1.0.0",
   "description": "Smart helpers for modern TypeScript environments. Small footprint, massive utility.",
-  "main": "./dist/index.js",
-  "module": "./dist/index.mjs",
+  "main": "./dist/index.cjs",
+  "module": "./dist/index.js",
   "types": "./dist/index.d.ts",
   "type": "module",
   "exports": {
     ".": {
       "types": "./dist/index.d.ts",
-      "import": "./dist/index.mjs",
-      "require": "./dist/index.js"
+      "import": "./dist/index.js",
+      "require": "./dist/index.cjs"
     },
     "./string": {
-      "types": "./dist/modules/string/string.module.d.ts",
-      "import": "./dist/modules/string/string.module.mjs",
-      "require": "./dist/modules/string/string.module.js"
+      "types": "./dist/modules/string/index.d.ts",
+      "import": "./dist/modules/string/index.js",
+      "require": "./dist/modules/string/index.cjs"
+    },
+    "./number": {
+      "types": "./dist/modules/number/index.d.ts",
+      "import": "./dist/modules/number/index.js",
+      "require": "./dist/modules/number/index.cjs"
+    },
+    "./array": {
+      "types": "./dist/modules/array/index.d.ts",
+      "import": "./dist/modules/array/index.js",
+      "require": "./dist/modules/array/index.cjs"
+    },
+    "./object": {
+      "types": "./dist/modules/object/index.d.ts",
+      "import": "./dist/modules/object/index.js",
+      "require": "./dist/modules/object/index.cjs"
+    },
+    "./storage": {
+      "types": "./dist/modules/storage/index.d.ts",
+      "import": "./dist/modules/storage/index.js",
+      "require": "./dist/modules/storage/index.cjs"
+    },
+    "./crypto": {
+      "types": "./dist/modules/crypto/index.d.ts",
+      "import": "./dist/modules/crypto/index.js",
+      "require": "./dist/modules/crypto/index.cjs"
+    },
+    "./date": {
+      "types": "./dist/modules/date/index.d.ts",
+      "import": "./dist/modules/date/index.js",
+      "require": "./dist/modules/date/index.cjs"
+    },
+    "./fn": {
+      "types": "./dist/modules/function/index.d.ts",
+      "import": "./dist/modules/function/index.js",
+      "require": "./dist/modules/function/index.cjs"
+    },
+    "./is": {
+      "types": "./dist/modules/is/index.d.ts",
+      "import": "./dist/modules/is/index.js",
+      "require": "./dist/modules/is/index.cjs"
     }
   },
   "typesVersions": {
     "*": {
-      "string": [
-        "./dist/modules/string/string.module.d.ts"
-      ],
-      "*": [
-        "./dist/index.d.ts"
-      ]
+      "string": ["./dist/modules/string/index.d.ts"],
+      "number": ["./dist/modules/number/index.d.ts"],
+      "array": ["./dist/modules/array/index.d.ts"],
+      "object": ["./dist/modules/object/index.d.ts"],
+      "storage": ["./dist/modules/storage/index.d.ts"],
+      "crypto": ["./dist/modules/crypto/index.d.ts"],
+      "date": ["./dist/modules/date/index.d.ts"],
+      "fn": ["./dist/modules/function/index.d.ts"],
+      "is": ["./dist/modules/is/index.d.ts"],
+      "*": ["./dist/index.d.ts"]
     }
   },
-  "files": [
-    "dist"
-  ],
-  "publishConfig": {
-    "access": "public"
-  },
+  "files": ["dist"],
+  "publishConfig": { "access": "public" },
   "scripts": {
     "build": "tsup",
     "local-build": "npm run build && yalc push --force",
