@@ -1,7 +1,7 @@
 import { HuK } from '../src';
 
 describe('HuK - StringModule', () => {
-  
+
   describe('Transformations', () => {
     test('slugify: should convert complex strings to URL-friendly slugs', () => {
       const input = 'Hello World! Bu Bir Testtir @2026';

@@ -1,0 +1,1 @@
+export const createDate = (date: Date | string | number) => new Date(date);

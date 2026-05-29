@@ -33,4 +33,8 @@ export class StringTransform {
     const pascal = this.toPascalCase(str);
     return pascal.charAt(0).toLowerCase() + pascal.slice(1);
   }
+
+  public static interpolate = (template: string, values: Record<string, any>) => {
+    return template.replace(/{(\w+)}/g, (_, key) => values[key] ?? `{${key}}`);
+  };
 }
