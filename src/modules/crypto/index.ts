@@ -35,7 +35,8 @@ export const crypto = {
       return hashArray.map(b => b.toString(16).padStart(2, '0')).join('');
     }
 
-    return "dummy-hash-for-test-" + saltedData.length;
+    const nodeCrypto = await import('node:crypto');
+    return nodeCrypto.createHash('sha256').update(saltedData, 'utf8').digest('hex');
   },
 
   validate: cryptoValidation,
