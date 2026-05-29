@@ -22,7 +22,7 @@ export const storage = {
     try {
       const item = localStorage.getItem(key);
       return item ? JSON.parse(item) : defaultValue;
-    } catch (e) {
+    } catch {
       return defaultValue;
     }
   },
