@@ -25,6 +25,36 @@ describe('HuK - StringModule', () => {
       expect(HuK.string.toPascalCase(input)).toBe('HelloWorldTest');
       expect(HuK.string.toCamelCase(input)).toBe('helloWorldTest');
     });
+
+    test('toTitleCase: should capitalize first letter of each word', () => {
+      const input = 'merhaba dünya bu bir test';
+      expect(HuK.string.toTitleCase(input)).toBe('Merhaba Dünya Bu Bir Test');
+    });
+
+    test('toSentenceCase: should capitalize only the first letter of the sentence', () => {
+      const input = 'merhaba dünya';
+      expect(HuK.string.toSentenceCase(input)).toBe('Merhaba dünya');
+    });
+
+    test('removeWhitespace: should remove all whitespace from string', () => {
+      const input = ' a b c ';
+      expect(HuK.string.removeWhitespace(input)).toBe('abc');
+    });
+
+    test('truncateWords: should truncate without breaking words', () => {
+      const text = 'Bu bir test mesajıdır';
+      expect(HuK.string.truncateWords(text, 10)).toBe('Bu bir...');
+    });
+
+    test('removeNumbers: should strip all digits from the string', () => {
+      const input = 'abc123def456';
+      expect(HuK.string.removeNumbers(input)).toBe('abcdef');
+    });
+
+    test('reverse: should reverse the string', () => {
+      const input = 'hello';
+      expect(HuK.string.reverse(input)).toBe('olleh');
+    });
   });
 
   describe('Security', () => {

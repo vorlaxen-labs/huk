@@ -22,9 +22,9 @@ Unlike monolithic utility libraries, **HuK** focuses on "Smart" logic:
 ## 📦 Installation
 
 ```bash
-pnpm add @vorlaxen-labs/huk
+pnpm add @vorlaxen-labs/huk-js
 # or
-npm install @vorlaxen-labs/huk
+npm install @vorlaxen-labs/huk-js
 ```
 
 ---
@@ -44,7 +44,7 @@ Advanced string manipulation with deep localization and security support.
 ## 🚀 Quick Start
 
 ```typescript
-import { huk } from '@vorlaxen-labs/huk';
+import { huk } from '@vorlaxen-labs/huk-js';
 
 // 1. Zero-Fail Slugify (Handles Turkish chars perfectly)
 const slug = huk.string.slugify("Hakan K. - Software Developer!"); 
@@ -67,10 +67,10 @@ To keep your bundles light, HuK supports sub-path imports. As the toolkit expand
 
 ```typescript
 // Import everything
-import { huk } from '@vorlaxen-labs/huk';
+import { huk } from '@vorlaxen-labs/huk-js';
 
 // Or just the string module
-import { string } from '@vorlaxen-labs/huk/string';
+import { string } from '@vorlaxen-labs/huk-js/string';
 ```
 
 ---
