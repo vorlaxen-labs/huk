@@ -30,3 +30,15 @@ export type { ObjectModule } from './modules/object';
 export type { StorageModule } from './modules/storage';
 export type { FnModule } from './modules/function';
 export type { CryptoModule } from './modules/crypto';
+
+
+export {
+  string,
+  number,
+  date,
+  array,
+  object,
+  storage,
+  fn,
+  crypto
+}
